@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ReKotlin Example</string>
+    <string name="explore">Explore</string>
+    <string name="viewed">Viewed</string>
+</resources>
