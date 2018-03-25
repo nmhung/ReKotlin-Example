@@ -33,12 +33,11 @@ class ExploreFragment : Fragment(), ExploreAdapter.OnItemClickListener {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
-        loadData()
     }
 
     override fun onResume() {
         super.onResume()
-        mAdapter.notifyDataSetChanged()
+        loadData()
     }
 
     private fun setUpRecyclerView() {

@@ -59,5 +59,7 @@ class ShopItemDetailsActivity : AppCompatActivity(), ShopItemDetailsView {
         imm.hideSoftInputFromWindow(mBinding.etMessage.windowToken, 0)
 
         mBinding.tvComment.text = "${mShopItem.comments.size} comment(s)"
+
+        ShopItemManager.instance.updateItem(mShopItem)
     }
 }
