@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.30'
+    ext.kotlin_version = '1.2.31'
     repositories {
         google()
         jcenter()
@@ -19,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://rekotlin.s3-ap-southeast-1.amazonaws.com/snapshots'
+        }
     }
 }
 

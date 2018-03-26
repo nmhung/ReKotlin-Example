@@ -4,18 +4,25 @@ import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.fitken.rekotlinexample.R
-import com.fitken.rekotlinexample.ShopItemManager
+import com.fitken.rekotlinexample.actions.ActionUpdateShopItemList
 import com.fitken.rekotlinexample.databinding.FragmentExploreBinding
 import com.fitken.rekotlinexample.shopitemdetails.ShopItemDetailsActivity
+import com.fitken.rekotlinexample.states.ShopItemListState
+import com.fitken.rekotlinexample.store
+import tw.geothings.rekotlin.StoreSubscriber
 
 /**
  * Created by ken on 3/23/18.
  */
-class ExploreFragment : Fragment(), ExploreAdapter.OnItemClickListener {
+
+
+class ExploreFragment : Fragment(), ExploreAdapter.OnItemClickListener, StoreSubscriber<ShopItemListState?> {
+
     private lateinit var mAdapter: ExploreAdapter
     private lateinit var mBinding: FragmentExploreBinding
 
@@ -33,11 +40,21 @@ class ExploreFragment : Fragment(), ExploreAdapter.OnItemClickListener {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
+        loadData()
     }
 
-    override fun onResume() {
-        super.onResume()
-        loadData()
+    override fun onStart() {
+        super.onStart()
+        store.subscribe(this) {
+            it.select {
+                it.shopItemListState
+            }
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        store.unsubscribe(this)
     }
 
     private fun setUpRecyclerView() {
@@ -46,10 +63,23 @@ class ExploreFragment : Fragment(), ExploreAdapter.OnItemClickListener {
     }
 
     private fun loadData() {
-        mAdapter.update(ShopItemManager.instance.getListShopItem())
+        var shopItems = ArrayList<ShopItem>()
+        for (i in 0 until 10) {
+            val comments = ArrayList<Comment>()
+            val shopItem = ShopItem(i, "Item $i", false, comments, "0")
+            shopItems.add(shopItem)
+        }
+        store.dispatch(ActionUpdateShopItemList(shopItems))
     }
 
     override fun onClick(shopItem: ShopItem) {
         ShopItemDetailsActivity.start(activity, shopItem)
+    }
+
+    override fun newState(state: ShopItemListState?) {
+        Log.e("newState", "state: ${state?.shopItems.toString()}")
+        if (state?.shopItems != null) {
+            mAdapter.update(state.shopItems)
+        }
     }
 }

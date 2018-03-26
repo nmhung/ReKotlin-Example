@@ -8,10 +8,14 @@ import android.os.SystemClock
 import android.support.v7.app.AppCompatActivity
 import android.view.inputmethod.InputMethodManager
 import com.fitken.rekotlinexample.R
-import com.fitken.rekotlinexample.ShopItemManager
+import com.fitken.rekotlinexample.actions.ActionComment
+import com.fitken.rekotlinexample.actions.ActionLike
+import com.fitken.rekotlinexample.actions.ActionView
 import com.fitken.rekotlinexample.databinding.ActivityShopItemDetailsBinding
 import com.fitken.rekotlinexample.explore.Comment
 import com.fitken.rekotlinexample.explore.ShopItem
+import com.fitken.rekotlinexample.store
+
 
 class ShopItemDetailsActivity : AppCompatActivity(), ShopItemDetailsView {
 
@@ -39,6 +43,8 @@ class ShopItemDetailsActivity : AppCompatActivity(), ShopItemDetailsView {
         mAdapter = CommentsAdapter()
         mBinding.rvComments.adapter = mAdapter
         mAdapter.update(mShopItem.comments)
+
+        store.dispatch(ActionView(mShopItem))
     }
 
     override fun onLikeClicked() {
@@ -46,7 +52,8 @@ class ShopItemDetailsActivity : AppCompatActivity(), ShopItemDetailsView {
         count++
         mShopItem.likeCount = count.toString()
         mBinding.tvLike.text = mShopItem.likeCount
-        ShopItemManager.instance.updateItem(mShopItem)
+//        ShopItemManager.instance.updateItem(mShopItem)
+        store.dispatch(ActionLike(mShopItem))
     }
 
     override fun onCommentSent(message: String) {
@@ -60,6 +67,7 @@ class ShopItemDetailsActivity : AppCompatActivity(), ShopItemDetailsView {
 
         mBinding.tvComment.text = "${mShopItem.comments.size} comment(s)"
 
-        ShopItemManager.instance.updateItem(mShopItem)
+        store.dispatch(ActionComment(mShopItem))
+//        ShopItemManager.instance.updateItem(mShopItem)
     }
 }
