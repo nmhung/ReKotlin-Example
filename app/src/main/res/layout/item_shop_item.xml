@@ -7,7 +7,7 @@
 
         <variable
             name="shopItem"
-            type="com.fitken.rekotlinexample.explore.ShopItem" />
+            type="com.fitken.rekotlinexample.ui.explore.ShopItem" />
     </data>
 
     <android.support.constraint.ConstraintLayout

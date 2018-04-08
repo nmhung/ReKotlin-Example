@@ -1,11 +1,11 @@
-package com.fitken.rekotlinexample
+package com.fitken.rekotlinexample.ui
 
 import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.fitken.rekotlinexample.explore.ExploreFragment
-import com.fitken.rekotlinexample.viewed.ViewedFragment
+import com.fitken.rekotlinexample.ui.explore.ExploreFragment
+import com.fitken.rekotlinexample.ui.viewed.ViewedFragment
 
 /**
  * Created by ken on 3/23/18.

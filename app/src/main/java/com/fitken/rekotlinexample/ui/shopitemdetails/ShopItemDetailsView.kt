@@ -1,4 +1,4 @@
-package com.fitken.rekotlinexample.shopitemdetails
+package com.fitken.rekotlinexample.ui.shopitemdetails
 
 /**
  * Created by ken on 3/23/18.

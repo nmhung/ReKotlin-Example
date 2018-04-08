@@ -5,11 +5,11 @@
 
         <variable
             name="shopItem"
-            type="com.fitken.rekotlinexample.explore.ShopItem" />
+            type="com.fitken.rekotlinexample.ui.explore.ShopItem" />
 
         <variable
             name="view"
-            type="com.fitken.rekotlinexample.shopitemdetails.ShopItemDetailsView" />
+            type="com.fitken.rekotlinexample.ui.shopitemdetails.ShopItemDetailsView" />
 
         <variable
             name="message"
@@ -21,7 +21,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.fitken.rekotlinexample.shopitemdetails.ShopItemDetailsActivity">
+        tools:context=".ui.shopitemdetails.ShopItemDetailsActivity">
 
         <ImageView
             android:id="@+id/iv_photo"

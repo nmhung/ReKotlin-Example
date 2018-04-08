@@ -1,6 +1,6 @@
 package com.fitken.rekotlinexample.actions
 
-import com.fitken.rekotlinexample.explore.ShopItem
+import com.fitken.rekotlinexample.ui.explore.ShopItem
 import tw.geothings.rekotlin.Action
 
 /**

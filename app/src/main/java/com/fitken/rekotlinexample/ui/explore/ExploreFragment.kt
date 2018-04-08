@@ -1,4 +1,4 @@
-package com.fitken.rekotlinexample.explore
+package com.fitken.rekotlinexample.ui.explore
 
 import android.content.Context
 import android.databinding.DataBindingUtil
@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import com.fitken.rekotlinexample.R
 import com.fitken.rekotlinexample.actions.ActionUpdateShopItemList
 import com.fitken.rekotlinexample.databinding.FragmentExploreBinding
-import com.fitken.rekotlinexample.shopitemdetails.ShopItemDetailsActivity
+import com.fitken.rekotlinexample.ui.shopitemdetails.ShopItemDetailsActivity
 import com.fitken.rekotlinexample.states.ShopItemListState
 import com.fitken.rekotlinexample.store
 import tw.geothings.rekotlin.StoreSubscriber

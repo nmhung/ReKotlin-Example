@@ -1,8 +1,9 @@
-package com.fitken.rekotlinexample
+package com.fitken.rekotlinexample.ui
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.fitken.rekotlinexample.R
 import com.fitken.rekotlinexample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

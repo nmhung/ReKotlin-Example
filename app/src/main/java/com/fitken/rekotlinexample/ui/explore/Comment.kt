@@ -1,4 +1,4 @@
-package com.fitken.rekotlinexample.explore
+package com.fitken.rekotlinexample.ui.explore
 
 import java.io.Serializable
 

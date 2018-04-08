@@ -1,10 +1,10 @@
-package com.fitken.rekotlinexample.shopitemdetails
+package com.fitken.rekotlinexample.ui.shopitemdetails
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.fitken.rekotlinexample.databinding.ItemCommentBinding
-import com.fitken.rekotlinexample.explore.Comment
+import com.fitken.rekotlinexample.ui.explore.Comment
 
 /**
  * Created by ken on 3/23/18.

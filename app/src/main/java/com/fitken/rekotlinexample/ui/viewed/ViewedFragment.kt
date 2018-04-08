@@ -1,4 +1,4 @@
-package com.fitken.rekotlinexample.viewed
+package com.fitken.rekotlinexample.ui.viewed
 
 import android.content.Context
 import android.databinding.DataBindingUtil
@@ -10,8 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.fitken.rekotlinexample.R
 import com.fitken.rekotlinexample.databinding.FragmentViewedBinding
-import com.fitken.rekotlinexample.explore.ExploreAdapter
-import com.fitken.rekotlinexample.explore.ShopItem
+import com.fitken.rekotlinexample.ui.explore.ExploreAdapter
+import com.fitken.rekotlinexample.ui.explore.ShopItem
 import com.fitken.rekotlinexample.states.ViewedListState
 import com.fitken.rekotlinexample.store
 import tw.geothings.rekotlin.StoreSubscriber
@@ -30,7 +30,7 @@ class ViewedFragment : Fragment(), StoreSubscriber<ViewedListState?>, ExploreAda
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_viewed, container, false)
         return mBinding.root
     }

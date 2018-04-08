@@ -1,4 +1,4 @@
-package com.fitken.rekotlinexample.shopitemdetails
+package com.fitken.rekotlinexample.ui.shopitemdetails
 
 import android.content.Context
 import android.content.Intent
@@ -12,8 +12,8 @@ import com.fitken.rekotlinexample.actions.ActionComment
 import com.fitken.rekotlinexample.actions.ActionLike
 import com.fitken.rekotlinexample.actions.ActionView
 import com.fitken.rekotlinexample.databinding.ActivityShopItemDetailsBinding
-import com.fitken.rekotlinexample.explore.Comment
-import com.fitken.rekotlinexample.explore.ShopItem
+import com.fitken.rekotlinexample.ui.explore.Comment
+import com.fitken.rekotlinexample.ui.explore.ShopItem
 import com.fitken.rekotlinexample.store
 
 
@@ -52,7 +52,6 @@ class ShopItemDetailsActivity : AppCompatActivity(), ShopItemDetailsView {
         count++
         mShopItem.likeCount = count.toString()
         mBinding.tvLike.text = mShopItem.likeCount
-//        ShopItemManager.instance.updateItem(mShopItem)
         store.dispatch(ActionLike(mShopItem))
     }
 
